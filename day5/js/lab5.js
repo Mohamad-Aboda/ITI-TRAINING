@@ -51,6 +51,36 @@ for(i in arr){
     }
 }
 console.log("min number is " + mn);
+console.log("max number is  " + mx );// Display Max and Min Numbers
+
+var mx = -1000000000;
+var mn =  1000000000;
+for(i in arr){
+    if(arr[i] > mx){
+        mx = arr[i];
+    }
+    
+    if(arr[i] < mn){
+        mn =  arr[i];
+    }
+}
+console.log("min number is " + mn);
+console.log("max number is  " + mx );
+
+
+
+var mx = -1000000000;
+var mn =  1000000000;
+for(i in arr){
+    if(arr[i] > mx){
+        mx = arr[i];
+    }
+    
+    if(arr[i] < mn){
+        mn =  arr[i];
+    }
+}
+console.log("min number is " + mn);
 console.log("max number is  " + mx );
 
 
@@ -79,16 +109,6 @@ function sumAll(arr){
 
 var res = eval(sumAll([1, 3, 3, 5]));
 console.log("sum = " + res);
-
-
-
-
-
-
-
-
-
-
 
 
 
