@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+
+                border:2px solid black;
+                width:700px;
+                height:370px;
+                background-color:rgb(120, 143, 143);
+        }
+            
+        #left, #right {
+            border: 2px solid yellow;
+            padding: 10px;
+            margin: 10px auto;
+            width: 320px;
+            height:300px;
+        }
+        
+        #footer {
+
+            width: 600px;
+            height: 30px;
+            clear:both;
+            text-align:center;
+
+        }
+            
+        #left {
+            float: left;
+        }
+        #right {
+            float:right;
+        }
+
+        textarea{
+            width:100%;
+            height:100%;
+        }
+
+        button{
+            text-align: center;
+            border: 2px solid violet;
+            border-radius: 20% 50% /40% 10%  ;
+
+
+
+        }
+        button:hover{
+            color:greenyellow;
+            border: 2px solid lightgreen;
+            border-radius: 25px;
+
+        }
+     
+       
+        
+    
+        
+
+    </style>
+    <script src = "js/runner.js"></script>
+
+</head>
+<body>
+    
+    <div id = "main">
+        <div id = "left">
+            <textarea ></textarea>
+        </div>
+
+        <div id = "right"></div>
+        <div id = "footer">
+            <button value="Run">Run</button>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
