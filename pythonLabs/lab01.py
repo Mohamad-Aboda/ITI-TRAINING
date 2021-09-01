@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 import math
 
 # 1
+=======
+
+# 1
+import math
+
+
+>>>>>>> 659819ff8de0232d7d0536c9ff07ff0027501620
 def count_vowels(s):
     cnt = 0
     for i in range(len(s)):
@@ -58,7 +66,11 @@ def reverse_string():
     print(name[::-1])
 
 # 6
+<<<<<<< HEAD
 import math
+=======
+
+>>>>>>> 659819ff8de0232d7d0536c9ff07ff0027501620
 def area():
     ok = True
     while ok:
@@ -135,12 +147,20 @@ if __name__ == '__main__':
 
     # area()
 
+<<<<<<< HEAD
     ask_for_name()
 
     # count_iti()
 
     # longest_substring('abdulrahman')
     # longest_substring('abcabcdef')
+=======
+    # ask_for_name()
+
+    # count_iti()
+
+    longest_substring('abdulrahman')
+>>>>>>> 659819ff8de0232d7d0536c9ff07ff0027501620
 
 
 
