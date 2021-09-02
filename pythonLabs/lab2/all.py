@@ -159,7 +159,7 @@ def welcome():
         if ans == 'y' or ans == 'Y':
             ok = True
         elif ans == 'n' or ans == 'N':
-            ok = False
+            sys.exit()
         else:
             print(colored('Enter valid answer!', 'red'))
 
