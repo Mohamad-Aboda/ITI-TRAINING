@@ -1,5 +1,10 @@
 import sys 
+from termcolor import colored
 from registration import aemail, apassword
+# from main import bcolors
+
+
+
 
 # User Login Function 
 def login():
@@ -26,9 +31,8 @@ def login():
             one = True
         
         if one:
-            print('You Loged successfully!')
-            print('************************************************************************************************')
-            
+            print(colored('You Loged successfully!', 'green'))
+            print(colored("*************************************************************************************", "red"))
 
             ok = False
         else:

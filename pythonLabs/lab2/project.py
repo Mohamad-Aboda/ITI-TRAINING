@@ -1,4 +1,10 @@
 import sys 
+from termcolor import colored
+
+# from main import bcolors
+
+
+
 
 # Project Function 
 atitle = adetails = atotal_target = [] 
@@ -25,16 +31,15 @@ def project():
         elif ans == 'n' or ans == 'N':
             if len(atitle) == 0:
                 print('NO previous project available now!')
-
             else:
                 n = len(atitle)
-                for i in range(n//3):
+                for i in range(n):
                     print(f'PROJECT NAME IS {atitle[i]}')
                     print(f'PROJECT DETAILS ARE {adetails[i+1]}')
                     print(f'PROJECT TOTAL_TARGET IS  {atotal_target[i+2]}')
                     break
                     i += 1
-                    print(f'n {n}')
+                    
 
         else:
             sys.exit()

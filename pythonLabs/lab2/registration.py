@@ -1,8 +1,8 @@
 import re 
-
+from termcolor import colored
 
 # User Registration Function 
-fname = lname = aemail = apassword = aphone = [] 
+fname = lname = aemail = apassword = aphone = []
 def registration():
     print(f'Enter your first name!')
     first_name = input()
@@ -42,7 +42,7 @@ def registration():
         else:
             print('Enter valid phone number!')
 
-    print('Congratulations your registration completed successfully!')
-    print('************************************************************************************************')
+    print(colored('Congratulations your registration completed successfully!', 'green'))
+    print(colored("*************************************************************************************", "red"))
 
 
