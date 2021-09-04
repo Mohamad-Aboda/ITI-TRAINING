@@ -297,7 +297,6 @@ def update_project():
         # conn.close()
         else:print(colored("Input can't be empty",'red'))
 
-
 def welcome():
     while True:
         print(colored("[1] Enter 1 To Create Project", 'blue'))
