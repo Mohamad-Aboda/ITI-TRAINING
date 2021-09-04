@@ -31,7 +31,7 @@ def login():
             one = True
         
         if one:
-            print(colored('You Loged successfully!', 'green'))
+            print(colored('You LogedYou successfully!', 'green'))
             print(colored("*************************************************************************************", "red"))
 
             ok = False

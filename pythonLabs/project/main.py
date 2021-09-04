@@ -11,6 +11,7 @@ email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 def registration():
     while True:
         first_name = input(colored('Enter your first name!', 'blue'))
+        first_name = first_name.strip()
         if first_name  and len(first_name) >= 3 and first_name.isdigit() == False:
             break
         else:
@@ -18,6 +19,7 @@ def registration():
     
     while True:
         last_name = input(colored('Enter Your Last Name!', 'blue'))
+        last_name = last_name.strip()
         if last_name  and len(last_name) >= 3 and last_name.isdigit() == False:
             break
         else:
@@ -34,12 +36,14 @@ def registration():
     while True:
         while True:
             password =  input(colored('Enter Your Password!', 'blue'))
+            password = password.strip()
             if password:break
             else:print(colored('Please Enter Your Password?', 'red'))
 
 
         while True:    
             confirm_password = input(colored('Confirm Your Password!', 'blue'))
+            confirm_password = confirm_password.strip()
             if confirm_password:break
             else:print(colored('Please Confirm Your Password?', 'red'))
 
@@ -77,6 +81,7 @@ def login():
                 print(colored('Please Enter Valid Email?', 'red'))
         while True:
             login_password = input(colored("Enter Your Password: ", 'blue'))
+            login_password = login_password.strip()
             if login_password:break
             else:print(colored("Password can't be empty?", 'red'))
 
@@ -112,6 +117,7 @@ def logic():
             while True:
                 print(colored("You should login first to access the app!", 'yellow'))
                 inp = input(colored("Do You Want To Login?[Y/N]", 'blue'))
+                inp = inp.strip()
                 inp = inp.lower()
                 if inp == 'y':
                     res = login()
@@ -123,6 +129,7 @@ def logic():
         while True:
             finish = input(colored("Do you want to continue?[Y/N]", 'blue'))
             finish = finish.lower()
+            finish = finish.strip()
             if finish == 'n':ok = False;break 
             elif finish == 'y':welcome()
             else:print(colored("Enter Valid Input!", 'red'))
@@ -131,15 +138,24 @@ def create_project():
     
     while True:
         title = input(colored('Enter The Campaign Title!', 'blue'))
+        title = title.strip()
         if title and len(title) >= 5:break
+        else:print(colored("Project title can't be empty!"), 'red')
     
     while True:
         details = input(colored('Enter The Campaign Details!', 'blue'))
+        details = details.strip()
         if details and len(details) >= 5:break
+        else:print(colored("Project details can't be empty!"), 'red')
+
     
     while True:
         total_target = input(colored('Enter The Total Target Required For The Campaign!', 'blue'))
+        total_target = total_target.strip()
         if total_target:break
+        else:print(colored("Project total target can't be empty!"), 'red')
+
+        
 
     while True:
         start_date = input("Enter the start date in format 'dd-mm-yy' : ")
@@ -195,6 +211,7 @@ def delete_project():
     
     while True:
         ans = input(colored("Enter The Project Title You Want To Delete!", 'blue'))
+        ans = ans.strip()
         if ans:
             cursor.execute("SELECT * from project_info")
             data = cursor.fetchall();
@@ -216,59 +233,70 @@ def update_project():
     data = cursor.fetchall()
     while True:
         ans = input(colored("Enter Project Title You Want to Modify?", 'blue'))
-        found = False
-        for idx in data:
-            if ans in idx[0]:found = True
-        if found:
-            while True:
-                title = input(colored('Enter The New Campaign Title!', 'blue'))
-                if title and len(title) >= 5:break
-            
-            while True:
-                details = input(colored('Enter The New Campaign Details!', 'blue'))
-                if details and len(details) >= 5:break
-            
-            while True:
-                total_target = input(colored('Enter The New Total Target Required For The Campaign!', 'blue'))
-                if total_target:break
+        ans = ans.strip()
+        if ans:
+            found = False
+            for idx in data:
+                if ans in idx[0]:found = True
+            if found:
+                while True:
+                    title = input(colored('Enter The New Campaign Title!', 'blue'))
+                    title = title.strip()
+                    if title and len(title) >= 5:break
+                    else:print(colored("Title can't be empty!", 'red'))
+                
+                while True:
+                    details = input(colored('Enter The New Campaign Details!', 'blue'))
+                    details = details.strip()
+                    if details and len(details) >= 5:break
+                    else:print(colored("Details can't be empty!", 'red'))
+                
+                while True:
+                    total_target = input(colored('Enter The New Total Target Required For The Campaign!', 'blue'))
+                    total_target = total_target.strip()
+                    if total_target:break
+                    else:print(colored("Total Target can't be empty!", 'red'))
 
-            while True:
-                start_date = input("Enter the New start date in format 'dd-mm-yy' : ")
-                day, month, year = start_date.split('-')
-                isValidDate = True
-                try:
-                    datetime.datetime(int(year), int(month), int(day))
-                except ValueError:
-                    isValidDate = False
+                while True:
+                    start_date = input(colored("Enter the New start date in format 'dd-mm-yy' : ", 'blue'))
+                    day, month, year = start_date.split('-')
+                    isValidDate = True
+                    try:
+                        datetime.datetime(int(year), int(month), int(day))
+                    except ValueError:
+                        isValidDate = False
 
-                if isValidDate:break
-                else:print(colored("Enter Valid Date?", 'red'))
+                    if isValidDate:break
+                    else:print(colored("Enter Valid Date?", 'red'))
 
-            while True:
-                end_date = input("Enter the New end date in format 'dd-mm-yy' : ")
-                day, month, year = start_date.split('-')
-                isValidDate = True
-                try:
-                    datetime.datetime(int(year), int(month), int(day))
-                except ValueError:
-                    isValidDate = False
+                while True:
+                    end_date = input(colored("Enter the New end date in format 'dd-mm-yy' : ", 'blue'))
+                    day, month, year = start_date.split('-')
+                    isValidDate = True
+                    try:
+                        datetime.datetime(int(year), int(month), int(day))
+                    except ValueError:
+                        isValidDate = False
 
-                if isValidDate:break
-                else:print(colored("Enter Valid Date?", 'red'))
-            sql = """ UPDATE project_info 
-                    SET title = %s , details = %s , total_target = %s , start_date = %s , end_date = %s
-                    WHERE title = %s """
-            cursor.execute(sql, (title, details, total_target, start_date, end_date, ans))
-            conn.commit()
-            break
-            
-        else:
-            print(colored("Project Not Found?", 'red'))
+                    if isValidDate:break
+                    else:print(colored("Enter Valid Date?", 'red'))
+                sql = """ UPDATE project_info 
+                        SET title = %s , details = %s , total_target = %s , start_date = %s , end_date = %s
+                        WHERE title = %s """
+                cursor.execute(sql, (title, details, total_target, start_date, end_date, ans))
+                print(colored('Data Updated Successfully!', 'green'))
+                print(colored("******************************************************", "green"))
 
-    # cursor.close()
-    # conn.close()
-    print(colored('Data Updated Successfully!', 'green'))
-    print(colored("******************************************************", "green"))
+                conn.commit()
+                break
+                
+            else:
+                print(colored("Project Not Found?", 'red'))
+
+        # cursor.close()
+        # conn.close()
+        else:print(colored("Input can't be empty",'red'))
+
 
 def welcome():
     while True:
@@ -278,15 +306,17 @@ def welcome():
         print(colored("[4] Enter 4 To Update Project", 'blue'))
         print(colored("[5] Enter 5 To Exit Project", 'blue'))
         ans = input(colored("Enter Your Selection", 'yellow'))
+        ans = ans.strip()
         if ans == "1":create_project();break
         elif ans == "2":view();break
         elif ans == "3":delete_project();break
         elif ans == "4":update_project();break
         elif ans == "5":sys.exit()
-        else:print(colored("Enter valid input!"), 'red')
+        else:print(colored("Enter valid input!", 'red'))
 
-def search():
+def search_by_date():
     while True:
+        cursor.execute("SELECT * FROM project_info")
         data = cursor.fetchall()
         ans = input("Enter the Date in format 'dd-mm-yy' : ")
         day, month, year = ans.split('-')
@@ -296,27 +326,23 @@ def search():
         except ValueError:
             isValidDate = False
 
+        print(type(ans))
         if isValidDate:
             if data == []:
-                    print(colored("No Previous Projects With That Date!", 'red'))
+                print(colored("No Previous Projects With That Date!", 'red'))
+                break
             else:
-                cursor.execute("SELECT * from project_info WHERE date = %s", (ans))
+                # cursor.execute("SELECT * FROM project_info WHERE start_date = %s", (ans))
+                cursor.execute("""SELECT * FROM project_info 
+               WHERE start_date BETWEEN 
+                   date '2015-06-01' and 
+                   date '2021-06-30';""")
+
+                break
 
         else:print(colored("Enter Valid Date?", 'red'))
 
 
-
-    
-    
-
-
-
-    
-
-
-    
-
-
-
 if __name__ == '__main__':
     logic()
+
