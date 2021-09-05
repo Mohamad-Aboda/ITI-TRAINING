@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		h1{
+			text-align: center;
+			background-color: yellow;
+		}
+
+		div{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+
+	<div>
+		<h1>Welecomt to home page</h1>
+		<h1>Here we list names using context object </h1>
+
+
+		{% for val in mylist%}
+
+			<li> {{ val }} </li>
+
+		{% endfor %}
+	</div>
+
+
+</body>
+</html>
