@@ -7,7 +7,7 @@ def index(request):
 	return render(request, 'products/nav.html')
 
 def home(request):
-	mylist = ["Mohamed", "Ali", "Yara", "Sami", "Noha", "Adel", "Aya", "Magdi", "khaled"]
+	mylist = ["Mohamed", "Ali", "Yara", "Sami", "Noha", "Adel", "Aya"]
 	context = {'mylist':mylist}
 	return render(request, 'products/home.html', context)	
 
