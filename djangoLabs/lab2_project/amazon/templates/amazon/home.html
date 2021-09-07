@@ -1,0 +1,27 @@
+{% extends 'amazon/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% for student in students %}
+        <div style="display: inline-block; margin:7px">
+            <h1> {{student.name}} Profile</h1>
+            <img width="250" height="250" src="{% static 'amazon/images/'|add:student.img %}" class="card-img-top" alt="...">
+
+            <h5 class="card-title">{{student.name}}</h5>
+
+
+            <button style="  background-color: rgb(40, 173, 80);
+            color: black;
+            border: 2px solid #4CAF50;">
+            <a href="{% url  'details' student.name %}">View Profile</a></button>
+        </div>
+
+    {% endfor %}
+
+
+
+
+{% endblock content %}
+
+

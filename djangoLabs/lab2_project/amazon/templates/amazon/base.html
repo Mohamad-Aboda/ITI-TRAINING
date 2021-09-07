@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    html{
+        text-align:center;
+        display: inline-block;
+    }
+    header{
+        display: block;
+        text-align: center;
+        top: 0;
+        padding: 7px;
+        margin: 5x;
+        font-size: larger;
+        background-color: chartreuse;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        background-color: chartreuse;
+        padding: 7px;
+        margin: 5x;
+        width: 100%;
+        text-align: center;
+
+    }
+</style>
+<body>
+    <header>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </header>
+    <article></article>
+    <footer>© 2011 Mohamed Abdelhamid All Rights Reserved   </footer>
+
+    {% block content %}
+
+
+    {% endblock%}
+    
+</body>
+</html>

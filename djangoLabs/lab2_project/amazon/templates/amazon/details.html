@@ -1,0 +1,12 @@
+{% extends 'amazon/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+    <h1> Welcome to {{ student.name }} profile </h1>
+    <img width="250" height="250" src="{% static 'amazon/images/'|add:student.img %}" class="card-img-top" alt="{{ student.img }}">
+
+    
+{% endblock content %}
+
