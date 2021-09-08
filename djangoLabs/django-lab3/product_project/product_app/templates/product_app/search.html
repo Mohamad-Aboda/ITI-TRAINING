@@ -1,0 +1,26 @@
+{% extends 'product_app/base.html' %}
+{% load static %}
+{% block content %}
+    <form action="" method="PoST">
+        {% csrf_token %}
+        <br>
+        <input type="search" name="search" id=""><br>
+        <input style = "background-color: greenyellow;"type="submit" value="search">
+    </form>
+
+    {% for searchre in searchres %}
+    {% if searchre %}
+    <h1> Name: {{ searchre.name }} </h1>
+    <img width="250" height="250" src="{% static 'product_app/images/'|add:searchre.img %}" class="card-img-top" alt="...">
+    
+        <h1 style="color: green;"><p>Status: Available</h1>
+
+        {% endif %}
+
+        {% empty %}
+            <h1 style="color: red;">No Products Available with that name!</h1>
+       
+    {% endfor %}
+
+
+{% endblock content %}

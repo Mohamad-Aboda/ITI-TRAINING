@@ -1,0 +1,22 @@
+{% extends 'product_app/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    {% for product in database_products %}
+        <div style="display: inline-block; margin:7px">
+           
+            <h3 class="card-title">{{product.name}}</h3>
+            <img width="250" height="250" src="{% static 'product_app/images/'|add:product.img %}" class="card-img-top" alt="...">
+
+
+
+        </div>
+
+    {% endfor %}
+
+{% endblock content %}
+
+
+

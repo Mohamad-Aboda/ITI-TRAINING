@@ -1,0 +1,15 @@
+{% extends 'product_app/base.html' %}
+{% load static %}
+{% block content %}
+
+    
+
+
+    <form action="" method="PoST">
+        {% csrf_token %}
+        <br>
+        Enter product name to delete : <input type="search" name="search" id="">
+        <input style = "background-color: greenyellow;"   type="submit" value="Delete">
+    </form>
+
+{% endblock content %}

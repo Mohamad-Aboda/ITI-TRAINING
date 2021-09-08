@@ -1,0 +1,19 @@
+{% extends 'product_app/base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <br><br>
+    <div style="background-color: bisque;">
+    Product Name:
+    <input type="text" name="name"><br><br>
+    
+    product picture:
+    <input type="text" name = "img">
+
+      <input style = "background-color: lawngreen;" type="submit" value="Add Product"name="add">
+    </div>
+   
+</form>
+
+{% endblock content %}
